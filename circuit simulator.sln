@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.33328.57
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "circuit simulator", "circuit simulator\circuit simulator.pyproj", "{D1A9ACFE-41B5-468F-97C2-5E5D30BFE5BB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D1A9ACFE-41B5-468F-97C2-5E5D30BFE5BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1A9ACFE-41B5-468F-97C2-5E5D30BFE5BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5BF1541E-D11D-4DC8-AB57-31DF677FD798}
+	EndGlobalSection
+EndGlobal
