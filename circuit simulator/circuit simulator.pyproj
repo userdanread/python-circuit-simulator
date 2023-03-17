@@ -22,7 +22,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="circuit_simulator.py" />
-    <Compile Include="logitcGate.py">
+    <Compile Include="logicGate.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
