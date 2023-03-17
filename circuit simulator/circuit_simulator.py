@@ -1,41 +1,26 @@
 import tkinter as tk
 from logicGate import *
 
-#mouse_x = 0
-#mouse_y = 0
-def spawnAND(gatex, gatey):
-    butTestSpawn = tk.Button(main, text="AND!!", font=10)
-    butTestSpawn.place(x=gatex,y=gatey)
-
-
-def trackMouse(name):
-    canvas.bind("<Motion>", lambda event: print("Mouse position: ({}, {})".format(event.x, event.y)))  # tracks the mouse over the canvas
-    canvas.bind("<Button-1>", lambda event: placeGate(name))
-
-def spawnGate(type):
-    trackMouse(type)
-
-def placeGate(event, type):
-    global mouse_x, mouse_y
+def onMouseClick(event):
+    mouse_x =0
+    mouse_y =0
     mouse_x = event.x
     mouse_y = event.y
+    canvas.unbind("<Button-1>")
     canvas.unbind("<Motion>")
-    print("Your mouse is at location: {} {} ".format(mouse_x,mouse_y))
-    gates = {                   # acts like a switch-case
-            "AND": lambda: spawnAND(mouse_x, mouse_y),
-            "OR" : 1,
-            "NOT" : 1,
-            "NAND" : 1,
-            "NOR" : 1,
-            "XOR" : 1
-    }
+    #print("Mouse Position = {}, {}".format(mouse_x, mouse_y))
 
-    createFunc = gates.get(type)
+    return mouse_x, mouse_y
 
-    createFunc()
+def spawnGate(mouse_x, mouse_y, gateName):
+    x = mouse_x
+    y = mouse_y
+    print("Gate location: =  x: {}  y: {}".format(x,y))
+    print("Gate type: {}".format(gateName))
 
-
-# Menu buttons
+def loadGate(gateName):
+    canvas.bind("<Motion>", lambda event: print("Mouse x: {}  Mouse y: {}".format(event.x,event.y)))
+    canvas.bind("<Button-1>", lambda event: spawnGate(*onMouseClick(event), gateName))  # "*" - unloads the function (ie. takes its outputs directly from the function
 
 
 main = tk.Tk()
@@ -48,7 +33,7 @@ main.configure(background="black")
 canvas = tk.Canvas(main, height=500, width=800)
 canvas.place(x=160, y=40)
 
-butCreateGate_AND = tk.Button(main, text="Input", font=10, height=1, command=lambda:spawnGate("AND"))
+butCreateGate_AND = tk.Button(main, text="Input", font=10, height=1, command=lambda:loadGate("AND"))
 butCreateGate_AND.place(x=10, y=550)
 
 
