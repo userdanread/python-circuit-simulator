@@ -41,7 +41,7 @@ class logicGate:
         }
 
     def getOutput(self, inp1, inp2=None):
-        gate_func = self.gates.get(self.name)
+        gate_func = self.gates.get(self.name) # 
         if gate_func:
             if inp2 is None:
                 return gate_func(inp1)
